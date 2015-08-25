@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- title -->
+    <title>Your Contacts</title>
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Current Contacts</h1>
+        <!-- twig -->
+        {% if contacts is not empty %}
+            <p class="lead">Here are all your current contacts:</p>
+            <ul>
+                <!-- twig -->
+                {% for contact in contacts %}
+                    <li><b>{{ contact.getName }}</b></li>
+                        <ul>
+                            <li>{{ contact.getPhone }}</li>
+                            <li>{{ contact.getAddress }}</li>
+                        </ul>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="lead">You have no contacts.  Loser.</p>
+        {% endif %}
+
+        <!-- adding new contacts  --> 
+
+        <h1>Add a new contact:</h1>
+        <form action="/create_contact" method="post">
+            <div class="form-group">
+                <label for="name">Contact Name:</label>
+                <input id="name" name="name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input id="phone" name="phone" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input id="address" name="address" class="form-control">
+            </div>
+            <button type="submit" class="btn-primary">Add Contact</button>
+        </form>
+        <br>
+        <form action="/delete_contacts" method="post" onsubmit="return confirm('Are you sure you want to delete all your contacts?')">
+            <button type="submit" class="btn-danger">Clear Contacts</button>
+        </form>
+    </div>
+</body>
+</html>
