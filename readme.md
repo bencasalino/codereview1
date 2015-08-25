@@ -6,7 +6,6 @@
 
 ## Description
 
-The
 
 The homepage of this address book displays all current entries, the user can also add or delete new contact(s) information (name, phone number, and address).
 
