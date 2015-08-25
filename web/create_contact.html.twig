@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- bootstrap -- >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+
+
+    <title>Contact Added</title>
+</head>
+<body>
+    <div class="container">
+        <h1> You now have a new contact!! </h1>
+        <ul>
+            <li><b>{{ newcontact.getName }}</b></li>
+                <ul>
+                    <li>{{ newcontact.getPhone }}</li>
+                    <li>{{ newcontact.getAddress }}</li>
+                </ul>
+        </ul>
+        <p><a href="/">Return to Address Book Home Page.</a></p>
+    </div>
+</body>
+</html>
